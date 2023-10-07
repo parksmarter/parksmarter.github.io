@@ -28,16 +28,16 @@
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group mr-2">
               </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                Select vehicle
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#" id="vehicle0">Vehicle 0</a>
-                <a class="dropdown-item" href="#" id="vehicle1">Vehicle 1</a>
-                <a class="dropdown-item" href="#" id="vehicle2">Vehicle 2</a>
-                <a class="dropdown-item" href="#" id="vehicle3">Vehicle 3</a>
-                <a class="dropdown-item" href="#" id="vehicle4">Vehicle 4</a>
-              </div>
+                <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                  Select vehicle
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#" id="vehicle0">Vehicle 0</a>
+                  <a class="dropdown-item" href="#" id="vehicle1">Vehicle 1</a>
+                  <a class="dropdown-item" href="#" id="vehicle2">Vehicle 2</a>
+                  <a class="dropdown-item" href="#" id="vehicle3">Vehicle 3</a>
+                  <a class="dropdown-item" href="#" id="vehicle4">Vehicle 4</a>
+                </div>
             </div>
           </div>
 
@@ -148,26 +148,26 @@
   //Change the logic for price --> color
   //Max
   function getColorFromPrice(value) {
-    if (value < 25) {
+    if (value < 6.67) {
         return "rgba(0,255,0,0.5)"; // Green
-    } else if (value >= 25 && value < 50) {
+    } else if (value < 13.34) {
         return "rgba(63.75,255,0,0.5)";
-    } else if (value >= 50 && value < 75) {
+    } else if (value < 20.01) {
         return "rgba(127.5,255,0,0.5)";
-    } else if (value >= 75 && value < 100) {
+    } else if (value < 26.68) {
         return "rgba(191.25,255,0,0.5)"; 
-    } else if (value >= 100 && value < 125) {// Yellow
+    } else if (value < 33.35) { // Yellow
         return "rgba(255,255,0,0.5)";
-    } else if (value >= 125 && value < 150) {
+    } else if (value < 40.02) {
         return "rgba(255,191.25,0,0.5)";
-    } else if (value >= 150 && value < 175) {
+    } else if (value < 46.69) {
         return "rgba(255,127.5,0,0.5)";
-    } else if (value >= 175 && value < 200) {
+    } else if (value < 53.36) {
         return "rgba(255,63.75,0,0.5)";
     } else {
-        return "rgba(255,0,0,0.5)";// Red
+        return "rgba(255,0,0,0.5)"; // Red
     }
-  }
+}
   
   //API CALL
   //for (var i = 0; i < 8; i++) {
@@ -208,7 +208,7 @@
   
     for (var i = 0; i<prices.length; i++) {
       $("#district" + i).css("fill", getColorFromPrice(prices[i]));
-      $("#text" + i).text(prices[i].toFixed(2) + "€");
+      $("#text" + i).text(prices[i].toFixed(0) + "€/h");
       console.log(i);
     }
     //$("#district1").css("stroke", "red").css("stroke-width", "1");
